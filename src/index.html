@@ -7,14 +7,13 @@
     <title>Leaderboard</title>
   </head>
   <body>
-    <div class="wrapper">
+    <section class="wrapper">
       <header>
         <h1>Leaderboard</h1>
       </header>
-
-      <section class="board">
-          <section  class="user_board">
-            <label for="button">Recent scores</label><button type="button" name="button">Refresh</button>
+      <div class="board">
+          <div  class="user_board">
+            <label for="btn">Recent scores</label><button id="btn" type="button" name="button">Refresh</button>
             <ul class="list_style list">
               <li>Name: 100</li>
               <li>Name: 20</li>
@@ -24,15 +23,15 @@
               <li>Name: 77</li>
               <li>Name: 42</li>
             </ul>
-          </section>
+          </div>
 
-          <section class="input_data">
+          <div class="input_data">
             <h2>Add your score</h2>
             <input type="text" name="name" value="name" placeholder="Your name">
             <input type="text" name="score" value="score" placeholder="Your score">
             <input type="submit" name="submit" value="submit">
-          </section>
-        </section>
-    </div>
+          </div>
+        </div>
+    </section>
   </body>
 </html>
