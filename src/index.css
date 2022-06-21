@@ -1,0 +1,32 @@
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board {
+  display: flex;
+}
+
+.input_data {
+  display: flex;
+  flex-direction: column;
+}
+
+.list_style {
+  list-style: none;
+}
+
+input[type="submit"] {
+  align-self: flex-start;
+}
