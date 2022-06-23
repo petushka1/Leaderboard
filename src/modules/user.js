@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-export default async function addNewUser(url, data) {
+const addNewUser = async (url, data) => {
   const request = new Request(url, {
     method: 'POST',
     headers: {
@@ -7,6 +6,9 @@ export default async function addNewUser(url, data) {
     },
     body: JSON.stringify(data),
   });
-  // Uncomment to test result
+
   const response = await fetch(request);
-}
+  return response;
+};
+
+export default addNewUser;

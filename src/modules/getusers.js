@@ -1,4 +1,4 @@
-export default async function getAllUsers(url) {
+const getAllUsers = async (url) => {
   try {
     const response = await fetch(url);
 
@@ -10,4 +10,6 @@ export default async function getAllUsers(url) {
   } catch (error) {
     return `Error: ${error}`;
   }
-}
+};
+
+export default getAllUsers;

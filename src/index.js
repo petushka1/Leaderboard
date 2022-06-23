@@ -1,10 +1,7 @@
 import './index.css';
-// Uncomment to get a new id
-// import setNewGame from './modules/game.js';
 import addNewUser from './modules/user.js';
 import getAllUsers from './modules/getusers.js';
 
-// console.log(setNewGame());
 // Invoke function to post a new game
 const GAME_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/mqjI7JMIJrbkGE6l9z49/scores/';
 
@@ -41,7 +38,7 @@ submit.addEventListener('click', () => {
 });
 
 // Refresh Leaderboard
-async function populateUsers() {
+const populateUsers = async () => {
   const userData = await getAllUsers(GAME_URL);
 
   const list = document.querySelector('.list');
@@ -51,7 +48,7 @@ async function populateUsers() {
     textData += `<li>${user.user}: ${user.score}</li>`;
   });
   list.innerHTML = textData;
-}
+};
 
 button.addEventListener('click', populateUsers);
 populateUsers();
