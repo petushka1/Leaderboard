@@ -1,4 +1,5 @@
 import './index.css';
+
 import addNewUser from './modules/user.js';
 import getAllUsers from './modules/getusers.js';
 
@@ -31,6 +32,7 @@ submit.addEventListener('click', () => {
     user: name.value,
     score: score.value,
   };
+
   addNewUser(GAME_URL, data);
   name.value = '';
   score.value = '';
@@ -45,7 +47,7 @@ const populateUsers = async () => {
   list.innerHTML = '';
   let textData = '';
   userData.forEach((user) => {
-    textData += `<li>${user.user}: ${user.score}</li>`;
+    textData += `<li class="liPadding">${user.user}: ${user.score}</li>`;
   });
   list.innerHTML = textData;
 };
