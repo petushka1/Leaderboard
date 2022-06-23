@@ -1,16 +1,11 @@
-export async function addNewUser(url, name, score) {
+export async function addNewUser(url, data) {
   const request = new Request(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(
-      {
-        user: name,
-	      score: score
-      }
-    ),
+    body: JSON.stringify(data),
   })
   const response = await fetch(request);
-  return await response.json();
+  console.log(response.json());
 }

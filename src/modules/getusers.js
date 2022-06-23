@@ -1,11 +1,16 @@
 export async function getAllUsers(url) {
+
   try {
-    const response = fetch(url);
+    const response = await fetch(url);
+
     if (!response.ok) {
     throw new Error(`Error! status: ${response.status}`);
   }
-    const userData = await response.json().result;
-    return userData
+    const users = await response.json();
+    console.log(users.result);
+    return await users.result;
+
+
   } catch (error) {
     console.log(`Error: ${error}`);
   }

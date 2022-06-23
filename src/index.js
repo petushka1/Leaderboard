@@ -28,9 +28,11 @@ form.addEventListener('input', () => {
 
 // Post a new user for current game
 submit.addEventListener('click', () => {
-  addNewUser(GAME_URL, name, score);
-  name.value === '';
-  score.value === '';
+  let data = {
+    user: name.value,
+    score: score.value
+  }
+  addNewUser(GAME_URL, data);
 });
 
 // Refresh Leaderboard
@@ -39,61 +41,9 @@ button.addEventListener('click', async () => {
 
   const list = document.querySelector('.list');
   list.innerHTML = '';
-
-  for (const user in userData) {
-    const item = document.createElement('li');
-    item.textContent = `${user.user}: ${user.score}`;
-    list.appendChild(item);
+  let textData = "";
+  for (let user in userData) {
+    textData += `<li>${user.user}: ${user.score}</li>`;
   }
-})
-
-
-
-
-
-
-/*
-
-
-submit.addEventListener('click', () => {
-
-  fetch(GAME_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ user: `${name.value}`, score: `${score.value}` }),
-  })
-  .then((result) => {
-    alert(result.json());
-  });
-
-  name.value = '';
-  score.value = '';
+  list.innerHTML = textData;
 });
-
-
-async function getUsersScores(url) {
-  let userData;
-  const list = document.querySelector('.list');
-  try {
-      const response = await fetch(url);
-      userData = await response.json().result;
-  } catch (e) {
-    console.log(`Error: ${e}`);
-  }
-  list.innerHTML = '';
-
-  for (const user of userData) {
-    const item = list.createElement('li');
-    item.textContent = `${user.user}: ${user.score}`;
-    list.appendChild(item);
-  }
-}
-getUsersScores(GAME_URL);
-
-button.addEventListener('click', () => {
-  getUsersScores(GAME_URL);
-});
-
-*/
