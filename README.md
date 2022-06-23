@@ -14,6 +14,8 @@ The leaderboard website displays scores submitted by different players. It also 
 - npm
 - webpack
 
+## [Live Demo](https://petushka1.github.io/Leaderboard/)
+
 
 ## Getting Started
 
@@ -72,3 +74,4 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Fellow Micronauts
+- [Animation](https://css-tricks.com/fun-times-css-pixel-art/)
