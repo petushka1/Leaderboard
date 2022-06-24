@@ -19,7 +19,7 @@ body * {
   flex-direction: column;
   align-items: center;
   height: 100%;
-  margin: 10% 0;
+  margin: 10% 5%;
 }
 
 .board {
@@ -183,6 +183,10 @@ form {
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
   .board {
     flex-direction: column;
   }
